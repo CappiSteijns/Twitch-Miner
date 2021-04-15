@@ -26,8 +26,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
-      - name: list files
-        run: ls -R .
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
@@ -48,6 +46,7 @@ jobs:
     steps:
       - name: Updating service
         uses: appleboy/ssh-action@master
+        if: success() && github.ref == 'refs/heads/main'
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           port: ${{ secrets.DEPLOY_PORT }}
