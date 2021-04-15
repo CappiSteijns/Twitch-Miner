@@ -33,6 +33,7 @@ jobs:
           context: .
           push: true
           tags: mrcraftcod/twitch-miner:latest
+          platforms: linux/arm64
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
