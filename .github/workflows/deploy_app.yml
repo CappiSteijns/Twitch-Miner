@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.4
       - name: Checkout source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.4
         with:
           repository: 'Tkd-Alex/Twitch-Channel-Points-Miner-v2'
           path: 'miner'
